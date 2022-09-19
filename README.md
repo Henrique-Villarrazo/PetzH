@@ -5,5 +5,5 @@
  (Projeto incompleto ainda)
  
 <h3>Commits a serem realizados ainda:</h3>
-- Finalização do projeto.
-- Deploy do projeto com a ferramente Docker.
+<div> - Finalização do projeto. </div>
+<div> - Deploy do projeto com a ferramente Docker. </div>
