@@ -1,0 +1,71 @@
+<html>
+	<head th:replace="~{base :: head}"></head>
+	<body onload="onLoad()">
+		<div th:replace="~{base :: logo}"></div>
+	
+		<div class="container" id="ofertas">
+			<div th:replace="~{base :: titulo('Faça sua Oferta')}"></div>
+							
+			<div class="card mb-3" v-for="pedido in pedidos">
+				<div class="card-header alert-dark">{{pedido.tipoPet}}</div>
+				
+				<div class="card-body">
+					<div class="row">
+						<div class="col-12 col-sm-8  mb-3">
+							<div class="row">
+								<div class="col-md-5">Valor:<input/> </div>
+								<div class="col-md-7">Data da entrega: <input/></div>	
+							</div>
+							
+							<div>Raça: {{pedido.raca}}</div>
+							
+							<div>Descrição do serviço:</div>
+							<div>
+								<textarea class="form-control">{{pedido.descricao}}</textarea>
+							</div>
+						</div>
+						<div class="col-12 col-sm-4">
+							<div>
+								<img class="img-thumbnail" v-bind:src="pedido.urlImagem"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+		
+			function onLoad() {
+				ofertas
+				var app = new Vue(
+				{
+					el : '#ofertas',
+					data : {
+						pedidos : [
+							{
+						        "id" : 6,
+						        "tipoPet" : "Cachorro",
+						        "valorNegociado" : null,
+						        "dataDaEntrega" : null,
+						        "raca" : "Pinscher Alemão",
+						        "urlImagem" : "https://guiaanimal.net/uploads/content/image/47494/Design_sem_nome__4_.png",
+						        "descricao" : "Pinscher: banho",
+						        "status" : "AGUARDANDO"
+						    },
+							{
+						    	"id" : 7,
+						        "tipoPet" : "Cachorro",
+						        "valorNegociado" : null,
+						        "dataDaEntrega" : null,
+						        "raca" : "Husky Siberiano",
+						        "urlImagem" : "https://pet.totalneem.com/wp-content/uploads/2020/06/Hysky_simon-rae-jY_2XG-6HU0-unsplash-002-1024x683.jpg",
+						        "descricao" : "Husky: banho e tosa",
+						        "status" : "AGUARDANDO"
+							} ]
+					}
+				});
+			}
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</body>
+</html>

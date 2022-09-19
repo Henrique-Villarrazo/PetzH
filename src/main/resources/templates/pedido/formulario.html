@@ -1,0 +1,44 @@
+<html>
+	<head th:replace="~{base :: head}"></head>
+	<body>
+		<div th:replace="~{base :: logo}"></div>
+	
+       		 <div class="container">
+				<div th:replace="~{base :: titulo('Novo Pedido')}"></div>
+			
+				<div class="card mt-3">
+					<form th:action="@{/pedido/novo}"  th:object="${requisicaoNovoPedido}" class="card-body" method="POST">
+						<div class="form-group">
+							<label for="tipoPet">Produto</label>
+						    <input th:field="*{tipoPet}" th:errorclass="is-invalid" class="form-control" placeholder="tipo de pet"/>
+							<small>Informe qual pet.</small>
+							<div class="invalid-feedback" th:errors="*{tipoPet}">
+								Tipo de pet não reconhecido.
+							</div>
+					</div>
+				 <div class="form-group">
+                    <label for="raca">Raça</label>
+                    <input th:field="*{raca}" th:errorclass="is-invalid" class="form-control" placeholder="raça do seu pet"/>
+                    <small>Informe a raça de seu pet.</small>
+                    <div class="invalid-feedback" th:errors="*{raca}">
+							Erro durante o armazenamento da raça
+					</div>
+				</div>	
+				<div class="form-group">
+					<label for="urlImagem">Imagem</label>
+					<input th:field="*{urlImagem}" th:errorclass="is-invalid" class="form-control" placeholder="url da imagem"/>
+                    <small>Copie a url de uma boa imagem de um pet da mesma raça que o seu e cole aqui para ajudar os cuidadores.</small>
+                	<div class="invalid-feedback" th:errors="*{urlImagem}">
+						Erros na url da imagem
+					</div>
+                </div>
+				<div class="form-group">
+					<label for="descricao">Descricao do serviço</label>
+					<textarea th:field="*{descricao}" class="form-control" placeholder="Adicione detalhes importantes do seu pet para ajudar o cuidador"></textarea>
+				</div>
+					<button class="btn btn-primary" type="submit">Cadastrar Pedido</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
