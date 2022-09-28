@@ -43,15 +43,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.dataSource(dataSource)
 		.passwordEncoder(encoder);
 		
-		//Criar Usuário.
+//			Criar Usuário.
 //		UserDetails user =
 //				 User.builder()
-//					.username("maria")
-//					.password(encoder.encode("maria"))
-//					.roles("ADM")
+//					.username("henrique")
+//					.password(encoder.encode("henrique"))
+//					.roles("USER")
 //					.build();
-	
-//			.withUser(user);
+//	
+//		.withUser(user);
 	}
 	
 }
