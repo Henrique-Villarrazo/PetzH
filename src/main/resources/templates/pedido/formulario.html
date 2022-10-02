@@ -9,7 +9,7 @@
 				<div class="card mt-3">
 					<form th:action="@{/pedido/novo}"  th:object="${requisicaoNovoPedido}" class="card-body" method="POST">
 						<div class="form-group">
-							<label for="tipoPet">Produto</label>
+							<label for="tipoPet">Tipo de Pet</label>
 						    <input th:field="*{tipoPet}" th:errorclass="is-invalid" class="form-control" placeholder="tipo de pet"/>
 							<small>Informe qual pet.</small>
 							<div class="invalid-feedback" th:errors="*{tipoPet}">
