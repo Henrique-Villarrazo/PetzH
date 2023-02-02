@@ -1,0 +1,23 @@
+version: v2.10.2
+services:
+  petzh-villa:
+    image: petzh-villa
+    ports:
+      - "8080:8080"
+    networks:
+      - petzh-mysql
+    depends_on:
+      - mysqldb
+ 
+  mysqldb:
+    image: mysql:8
+    ports:
+            - "3307:3036"
+    networks:
+      - petzh-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=petzh     
+
+networks:
+  petzh-mysql: 
