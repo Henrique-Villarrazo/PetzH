@@ -5,4 +5,6 @@
  (Projeto incompleto ainda)
  
 ### Commits a serem realizados ainda:
-<div> - Deploy do projeto com a ferramenta Docker e finalização no heroku. </div>
+<div>
+- Deploy do projeto com a ferramenta Docker e finalização no heroku.
+</div>
